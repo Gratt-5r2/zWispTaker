@@ -28,7 +28,7 @@ namespace GOTHIC_ENGINE {
         float distance = GetDistanceToVob( *item );
         if( distance < bestDistance ) {
           bestDistance = distance;
-          bestItem = item;
+          bestItem     = item;
         }
       }
       else if( !bestItem || item->damageTotal > bestItem->damageTotal )
@@ -53,8 +53,8 @@ namespace GOTHIC_ENGINE {
     npc = (oCNpc*)par->GetInstance();
 
     int wisp_index = par->GetIndex( "WISP_DETECTOR" );
-    ignoreDropped = wisp_index == npc->instanz;
-    best = !ignoreDropped;
+    ignoreDropped  = wisp_index == npc->instanz;
+    best           = !ignoreDropped;
 
     detectedItem = npc->DetectNoDroppedItem_Union( flags, best, ignoreDropped );
     par->SetInstance( "ITEM", detectedItem );
